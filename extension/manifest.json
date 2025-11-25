@@ -1,0 +1,14 @@
+﻿{
+  "manifest_version": 3,
+  "name": "PhishGuard",
+  "version": "0.3.0",
+  "description": "Analisa a URL atual e alerta se for suspeita.",
+  "permissions": ["storage", "scripting", "activeTab", "tabs"],
+  "host_permissions": ["http://*/*", "https://*/*"],
+  "background": { "service_worker": "bg.js" },
+  "content_scripts": [
+    { "matches": ["<all_urls>"], "js": ["content.js"], "run_at": "document_start" }
+  ],
+  "options_ui": { "page": "options.html", "open_in_tab": true }
+}
+
